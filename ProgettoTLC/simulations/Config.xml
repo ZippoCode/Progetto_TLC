@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+<OSPFASConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="OSPF.xsd">
+
+  <!-- Areas -->
+  <Area id="0.0.0.0">
+    <AddressRange address="L_UDP1" mask="L_UDP1" status="Advertise" />
+    <AddressRange address="L_UDP2" mask="L_UDP2" status="Advertise" />
+    <AddressRange address="L_UDP3" mask="L_UDP3" status="Advertise" />
+    <AddressRange address="L_UDP4" mask="L_UDP4" status="Advertise" />
+    <AddressRange address="L_UDP5" mask="L_UDP5" status="Advertise" />
+    <AddressRange address="L_UDP6" mask="L_UDP6" status="Advertise" />
+    <AddressRange address="L_TCP1" mask="L_TCP1" status="Advertise" />
+    <AddressRange address="L_TCP2" mask="L_TCP2" status="Advertise" />
+    <AddressRange address="L_TCP3" mask="L_TCP3" status="Advertise" />
+    <AddressRange address="L_TCP4" mask="L_TCP4" status="Advertise" />
+    <AddressRange address="L_TCP5" mask="L_TCP5" status="Advertise" />
+    <AddressRange address="L_TCP6" mask="L_TCP6" status="Advertise" />
+    
+    <AddressRange address="R1>R2" mask="R1>R2" status="Advertise" />
+    <AddressRange address="R2>R1" mask="R2>R1" status="Advertise" />
+    
+    <AddressRange address="R1>R5" mask="R1>R5" status="Advertise" />
+    <AddressRange address="R5>R1" mask="R5>R1" status="Advertise" />
+    
+    <AddressRange address="R1>R6" mask="R1>R6" status="Advertise" />
+    <AddressRange address="R6>R1" mask="R6>R1" status="Advertise" />
+    
+    <AddressRange address="R2>R3" mask="R2>R3" status="Advertise" />
+    <AddressRange address="R3>R2" mask="R3>R2" status="Advertise" />
+    
+    <AddressRange address="R3>R4" mask="R3>R4" status="Advertise" />
+    <AddressRange address="R4>R3" mask="R4>R3" status="Advertise" />
+    
+    <AddressRange address="R3>R10" mask="R3>R10" status="Advertise" />
+    <AddressRange address="R10>R3" mask="R10>R3" status="Advertise" />
+    
+    <AddressRange address="R3>R9" mask="R3>R9" status="Advertise" />
+    <AddressRange address="R9>R3" mask="R9>R3" status="Advertise" />
+    
+    <AddressRange address="R3>R7" mask="R3>R7" status="Advertise" />
+    <AddressRange address="R7>R3" mask="R7>R3" status="Advertise" />
+    
+    <AddressRange address="R4>R5" mask="R4>R5" status="Advertise" />
+    <AddressRange address="R5>R4" mask="R5>R4" status="Advertise" />
+    
+    <AddressRange address="R4>R10" mask="R4>R10" status="Advertise" />
+    <AddressRange address="R10>R4" mask="R10>R4" status="Advertise" />
+  
+    <AddressRange address="R3>R5" mask="R3>R5" status="Advertise" />
+    <AddressRange address="R5>R3" mask="R5>R3" status="Advertise" />
+    
+    <AddressRange address="R6>R8" mask="R6>R8" status="Advertise" />
+    <AddressRange address="R8>R6" mask="R8>R6" status="Advertise" />
+    
+    <AddressRange address="R7>R9" mask="R7>R9" status="Advertise" />
+    <AddressRange address="R9>R7" mask="R9>R7" status="Advertise" /> 
+    
+    <AddressRange address="R6>R11" mask="R6>R11" status="Advertise" />
+    <AddressRange address="R11>R6" mask="R11>R6" status="Advertise" />
+    
+    <AddressRange address="R7>R13" mask="R7>R13" status="Advertise" />
+    <AddressRange address="R13>R7" mask="R13>R7" status="Advertise" />
+    
+    <AddressRange address="R9>R10" mask="R9>R10" status="Advertise" />
+    <AddressRange address="R10>R9" mask="R10>R9" status="Advertise" /> 
+    
+    <AddressRange address="R11>R12" mask="R11>R12" status="Advertise" />
+    <AddressRange address="R12>R11" mask="R12>R11" status="Advertise" />
+    
+    <AddressRange address="R12>R13" mask="R12>R13" status="Advertise" />
+    <AddressRange address="R13>R12" mask="R13>R12" status="Advertise" />
+    
+    <AddressRange address="R8>R13" mask="R8>R13" status="Advertise" />
+    <AddressRange address="R13>R8" mask="R13>R8" status="Advertise" />
+    
+  </Area>
+  
+    <!-- Routers -->
+    <Router name="R1" RFC1583Compatible="true">
+    	<BroadcastInterface ifName="eth0" areaID="0.0.0.0" interfaceOutputCost="1"/>
+    	<PointToPointInterface ifName="eth1" areaID="0.0.0.0" interfaceOutputCost="3"/>
+    	<PointToPointInterface ifName="eth2" areaID="0.0.0.0" interfaceOutputCost="5"/>
+    	<PointToPointInterface ifName="eth3" areaID="0.0.0.0" interfaceOutputCost="10"/>
+    </Router>
+    
+    <Router name="R2" RFC1583Compatible="true">
+   		<BroadcastInterface ifName="eth0" areaID="0.0.0.0" interfaceOutputCost="1"/>
+   		<PointToPointInterface ifName="eth1" areaID="0.0.0.0" interfaceOutputCost="5"/>
+   		<PointToPointInterface ifName="eth2" areaID="0.0.0.0" interfaceOutputCost="2"/>
+   	</Router>
+   	    
+    <Router name="R3" RFC1583Compatible="true">
+    	<PointToPointInterface ifName="eth0" areaID="0.0.0.0" interfaceOutputCost="2"/>
+    	<PointToPointInterface ifName="eth1" areaID="0.0.0.0" interfaceOutputCost="1"/>
+   		<PointToPointInterface ifName="eth2" areaID="0.0.0.0" interfaceOutputCost="6"/>
+   		<PointToPointInterface ifName="eth3" areaID="0.0.0.0" interfaceOutputCost="5"/>
+   		<PointToPointInterface ifName="eth4" areaID="0.0.0.0" interfaceOutputCost="15"/>
+   		<PointToPointInterface ifName="eth5" areaID="0.0.0.0" interfaceOutputCost="27"/>
+   	</Router>
+   	
+    <Router name="R4" RFC1583Compatible="true">
+       	<BroadcastInterface ifName="eth0" areaID="0.0.0.0" interfaceOutputCost="1"/>
+       	<BroadcastInterface ifName="eth1" areaID="0.0.0.0" interfaceOutputCost="1"/>
+    	<PointToPointInterface ifName="eth2" areaID="0.0.0.0" interfaceOutputCost="25"/>
+    	<PointToPointInterface ifName="eth3" areaID="0.0.0.0" interfaceOutputCost="6"/>
+    	<PointToPointInterface ifName="eth4" areaID="0.0.0.0" interfaceOutputCost="9"/>
+   	</Router>   	
+
+    <Router name="R5" RFC1583Compatible="true">
+   		<PointToPointInterface ifName="eth0" areaID="0.0.0.0" interfaceOutputCost="3"/>
+   		<PointToPointInterface ifName="eth1" areaID="0.0.0.0" interfaceOutputCost="1"/>
+   		<PointToPointInterface ifName="eth2" areaID="0.0.0.0" interfaceOutputCost="9"/>
+   	</Router>
+   	
+    <Router name="R6" RFC1583Compatible="true">
+       	<BroadcastInterface ifName="eth0" areaID="0.0.0.0" interfaceOutputCost="1"/>
+   		<PointToPointInterface ifName="eth1" areaID="0.0.0.0" interfaceOutputCost="3"/>
+   		<PointToPointInterface ifName="eth2" areaID="0.0.0.0" interfaceOutputCost="17"/>
+   		<PointToPointInterface ifName="eth3" areaID="0.0.0.0" interfaceOutputCost="4"/>
+   	</Router>   
+   	
+   	<Router name="R7" RFC1583Compatible="true">
+   	   	<BroadcastInterface ifName="eth0" areaID="0.0.0.0" interfaceOutputCost="1"/>
+   		<PointToPointInterface ifName="eth1" areaID="0.0.0.0" interfaceOutputCost="8"/>
+   		<PointToPointInterface ifName="eth2" areaID="0.0.0.0" interfaceOutputCost="27"/>
+   		<PointToPointInterface ifName="eth3" areaID="0.0.0.0" interfaceOutputCost="3"/>
+   	</Router>		
+   	
+   	 <Router name="R8" RFC1583Compatible="true">
+   		<BroadcastInterface ifName="eth0" areaID="0.0.0.0" interfaceOutputCost="1"/>
+   		<PointToPointInterface ifName="eth1" areaID="0.0.0.0" interfaceOutputCost="13"/>
+   		<PointToPointInterface ifName="eth2" areaID="0.0.0.0" interfaceOutputCost="17"/>
+   	</Router>   
+   	
+   	 <Router name="R9" RFC1583Compatible="true">
+   		<BroadcastInterface ifName="eth0" areaID="0.0.0.0" interfaceOutputCost="3"/>
+   		<PointToPointInterface ifName="eth1" areaID="0.0.0.0" interfaceOutputCost="3"/>
+   		<PointToPointInterface ifName="eth2" areaID="0.0.0.0" interfaceOutputCost="15"/>
+   		<PointToPointInterface ifName="eth3" areaID="0.0.0.0" interfaceOutputCost="5"/>
+   	</Router>
+   	
+   	<Router name="R10" RFC1583Compatible="true">
+   		<BroadcastInterface ifName="eth0" areaID="0.0.0.0" interfaceOutputCost="1"/>
+   		<BroadcastInterface ifName="eth1" areaID="0.0.0.0" interfaceOutputCost="1"/>
+   		<PointToPointInterface ifName="eth2" areaID="0.0.0.0" interfaceOutputCost="5"/>
+   		<PointToPointInterface ifName="eth3" areaID="0.0.0.0" interfaceOutputCost="5"/>
+   		<PointToPointInterface ifName="eth4" areaID="0.0.0.0" interfaceOutputCost="25"/>
+   	</Router>
+   	
+   	<Router name="R11" RFC1583Compatible="true">
+   		<PointToPointInterface ifName="eth0" areaID="0.0.0.0" interfaceOutputCost="4"/>
+   		<PointToPointInterface ifName="eth1" areaID="0.0.0.0" interfaceOutputCost="3"/>
+   	</Router>
+   	
+   	<Router name="R12" RFC1583Compatible="true">
+   		<BroadcastInterface ifName="eth0" areaID="0.0.0.0" interfaceOutputCost="1"/>
+   		<PointToPointInterface ifName="eth1" areaID="0.0.0.0" interfaceOutputCost="3"/>
+   		<PointToPointInterface ifName="eth2" areaID="0.0.0.0" interfaceOutputCost="1"/>
+   	</Router>
+   	
+   	<Router name="R13" RFC1583Compatible="true">
+   		<BroadcastInterface ifName="eth0" areaID="0.0.0.0" interfaceOutputCost="1"/>
+   		<PointToPointInterface ifName="eth1" areaID="0.0.0.0" interfaceOutputCost="13"/>
+   		<PointToPointInterface ifName="eth2" areaID="0.0.0.0" interfaceOutputCost="8"/>
+   		<PointToPointInterface ifName="eth3" areaID="0.0.0.0" interfaceOutputCost="1"/>
+   	</Router> 	
+</OSPFASConfig>
+

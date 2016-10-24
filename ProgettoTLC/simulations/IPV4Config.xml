@@ -1,0 +1,23 @@
+<config>
+
+
+	<interface among='L_UDP1 R1' address='220.10.37.x' netmask='255.255.255.128' />
+	<interface among='L_UDP2 R2' address='220.10.38.x' netmask='255.255.255.128' />
+	<interface among='L_UDP3 R4' address='220.10.39.x' netmask='255.255.255.128' />
+	<interface among='L_UDP4 R13' address='220.10.40.x' netmask='255.255.255.128' />
+	<interface among='L_UDP5 R10' address='220.10.41.x' netmask='255.255.255.128' />
+	<interface among='L_UDP6 R7' address='220.10.42.x' netmask='255.255.255.128' />
+	<interface among='L_TCP1 R6' address='220.10.12.x' netmask='255.255.254.0' />
+	<interface among='L_TCP2 R10' address='220.10.16.x' netmask='255.255.254.0' />
+	<interface among='L_TCP3 R12' address='220.10.20.x' netmask='255.255.254.0' />
+	<interface among='L_TCP4 R9' address='220.10.24.x' netmask='255.255.254.0' />
+	<interface among='L_TCP5 R8' address='220.10.28.x' netmask='255.255.254.0' />
+	<interface among='L_TCP6 R4' address='220.10.32.x' netmask='255.255.254.0' />
+	
+	<interface among='R*' address='220.10.10.x' netmask='255.255.255.252' />
+	
+	<route hosts='L_UDP*' destination='*' netmask='0.0.0.0' interface='eth0' />
+	<route hosts='L_TCP*' destination='*' netmask='0.0.0.0' interface='eth0' />
+	
+	
+</config>
